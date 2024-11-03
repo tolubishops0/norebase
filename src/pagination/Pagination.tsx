@@ -1,11 +1,13 @@
-import React, { useState } from "react";
-
 interface PaginationType {
   handlePrev: () => void;
   handleNext: () => void;
   page: number;
 }
-export default function Pagination({ handlePrev, handleNext, page }: PaginationType) {
+export default function Pagination({
+  handlePrev,
+  handleNext,
+  page,
+}: PaginationType) {
   return (
     <div className="flex justify-between items-center px-[0.5rem] mt-2">
       {page > 1 && (

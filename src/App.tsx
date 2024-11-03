@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import logo from "./logo.svg";
+import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { getTicketAction } from "./providers/Actions";
 import { toast } from "sonner";
