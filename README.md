@@ -61,4 +61,4 @@ pnpm start
 
 
 ## Live Preview 
-[Link]([https://tolu-norebase.netlify.app/](https://tolu-norebase.netlify.app/))
+[Link](https://tolu-norebase.netlify.app/)
