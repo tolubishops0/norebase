@@ -3,13 +3,19 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
+import { Toaster } from 'sonner';
 
+const queryClient = new QueryClient()
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <QueryClientProvider client={queryClient}>
+      <App />
+      <Toaster richColors position="top-right" expand={true} duration={3000} />
+    </QueryClientProvider>
   </React.StrictMode>
 );
 
