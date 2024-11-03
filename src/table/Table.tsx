@@ -35,21 +35,21 @@ export default function Table({ data }: TableDataType) {
                 <div className="flex flex-wrap flex-row items-center h-[8.5rem]">
                   <div className="flex flex-col w-1/2">
                     <span className="font-bold capitalize">💰 coin:</span>
-                    <span className="font-semibold ">{item.name}</span>
+                    <span className="font-medium ">{item.name}</span>
                   </div>
                   <div className="flex flex-col w-1/2">
                     <span className="font-bold capitalize">📰 code:</span>
-                    <span className="font-semibold ">{item.symbol}</span>
+                    <span className="font-medium ">{item.symbol}</span>
                   </div>
                   <div className="flex flex-col w-1/2 ">
                     <span className="font-bold capitalize">🤑 price:</span>
-                    <span className="font-semibold">${item.price_usd}</span>
+                    <span className="font-medium">${item.price_usd}</span>
                   </div>
                   <div className="flex flex-col w-1/2">
                     <span className="font-bold capitalize">
                       📉 total supply:
                     </span>
-                    <span className="font-semibold">
+                    <span className="font-medium">
                       {item.tsupply} {item.symbol}
                     </span>
                   </div>
