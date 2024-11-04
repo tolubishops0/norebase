@@ -22,6 +22,11 @@ In the project directory, you can run:
 -Tailwind: CSS pre-processor for styling.
 -Tanstack Query: For fetching a list of coin prices.
 
+## Testing
+
+This project uses [Jest](https://jestjs.io/) and [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/) for unit and integration tests to ensure the reliability of UI components and data fetching logic.
+
+
 ## Getting Started
 
 Follow these steps to set up and run the project on your local environment:
@@ -59,6 +64,15 @@ yarn run start
 pnpm start
 ```
 
+### Running Tests
+
+To run the tests, execute the following command:
+```bash
+npm test
+# or
+yarn test
+# or
+pnpm test
 
 ## Live Preview 
 [Link](https://tolu-norebase.netlify.app/)
