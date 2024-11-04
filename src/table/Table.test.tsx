@@ -27,19 +27,31 @@ describe("Table Component", () => {
   it("renders the table headers correctly", () => {
     render(<Table data={mockData} />);
 
-    expect(screen.getByText("💰coin:")).toBeInTheDocument();
-    expect(screen.getByText("📰code:")).toBeInTheDocument();
-    expect(screen.getByText("🤑price:")).toBeInTheDocument();
-    expect(screen.getByText("📉total supply:")).toBeInTheDocument();
+    const coinHeaders = screen.getAllByText("💰coin");
+    const codeHeaders = screen.getAllByText("📰code");
+    const priceHeaders = screen.getAllByText("🤑price");
+    const supplyHeaders = screen.getAllByText("📉total supply");
+
+    expect(coinHeaders.length).toBe(2);
+    expect(codeHeaders.length).toBe(2);
+    expect(priceHeaders.length).toBe(2);
+    expect(supplyHeaders.length).toBe(2);
   });
 
   it("renders table rows correctly with provided data", () => {
     render(<Table data={mockData} />);
 
-    expect(screen.getByText("Cardano")).toBeInTheDocument();
-    expect(screen.getByText("ADA")).toBeInTheDocument();
-    expect(screen.getByText("$0.334089")).toBeInTheDocument();
-    expect(screen.getByText("35983607755.528 ADA")).toBeInTheDocument();
+    const cardanoElements = screen.getAllByText("Cardano");
+    expect(cardanoElements.length).toBe(2);
+
+    const symbolElements = screen.getAllByText("ADA");
+    expect(symbolElements.length).toBe(2);
+
+    const priceElements = screen.getAllByText("$0.334089");
+    expect(priceElements.length).toBe(2);
+
+    const supplyElements = screen.getAllByText("35983607755.528 ADA");
+    expect(supplyElements.length).toBe(2);
   });
 
   it("displays skeleton loader when data is empty", () => {

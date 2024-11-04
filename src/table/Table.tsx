@@ -7,8 +7,10 @@ interface TableDataType {
 export default function Table({ data }: TableDataType) {
   return (
     <table className="w-full ">
-      <thead className="hidden md:table-header-group">
-        {/* <tr>
+      <thead
+        data-testid="desktop-view"
+        className="hidden md:table-header-group ">
+        <tr>
           <th className="text-left text-sm pl-4 capitalize pb-2 w-[30%]">
             💰coin
           </th>
@@ -21,7 +23,7 @@ export default function Table({ data }: TableDataType) {
           <th className="text-left text-sm pl-4 capitalize pb-2 w-[30%]">
             📉total supply
           </th>
-        </tr> */}
+        </tr>
       </thead>
 
       <tbody className="">
@@ -31,24 +33,25 @@ export default function Table({ data }: TableDataType) {
               key={index}
               className={`${index % 2 ? "bg-white" : "bg-gray-200"}`}>
               {/* DISPLAY ON MOBILE */}
-              <td colSpan={4} className="block md:hidden p-4">
+              <td
+                data-testid="mobile-view"
+                colSpan={4}
+                className="block md:hidden p-4 ">
                 <div className="flex flex-wrap flex-row items-center h-[8.5rem]">
                   <div className="flex flex-col w-1/2">
-                    <span className="font-bold capitalize">💰coin:</span>
+                    <span className="font-bold capitalize">💰coin</span>
                     <span className="font-medium ">{item.name}</span>
                   </div>
                   <div className="flex flex-col w-1/2">
-                    <span className="font-bold capitalize">📰code:</span>
+                    <span className="font-bold capitalize">📰code</span>
                     <span className="font-medium ">{item.symbol}</span>
                   </div>
                   <div className="flex flex-col w-1/2 ">
-                    <span className="font-bold capitalize">🤑price:</span>
+                    <span className="font-bold capitalize">🤑price</span>
                     <span className="font-medium">${item.price_usd}</span>
                   </div>
                   <div className="flex flex-col w-1/2">
-                    <span className="font-bold capitalize">
-                      📉total supply:
-                    </span>
+                    <span className="font-bold capitalize">📉total supply</span>
                     <span className="font-medium">
                       {item.tsupply} {item.symbol}
                     </span>
@@ -56,18 +59,26 @@ export default function Table({ data }: TableDataType) {
                 </div>
               </td>
               {/* DISPLAY ON DESKTOP */}
-              {/* <td className=" hidden md:table-cell pl-4 w-[30%] h-[2.5rem] text-[#1f1e1e] font-medium text-sm capitalize ">
+              <td
+                data-testid="desktop-view"
+                className=" hidden md:table-cell pl-4 w-[30%] h-[2.5rem] text-[#1f1e1e] font-medium text-sm capitalize ">
                 {item.name}
               </td>
-              <td className=" hidden md:table-cell pl-4 w-[20%] text-[#1f1e1e] font-medium text-sm capitalize">
+              <td
+                data-testid="desktop-view"
+                className=" hidden md:table-cell pl-4 w-[20%] text-[#1f1e1e] font-medium text-sm capitalize">
                 {item.symbol}
               </td>
-              <td className="hidden md:table-cell pl-4 w-[20%] text-[#1f1e1e] font-medium text-sm capitalize">
+              <td
+                data-testid="desktop-view"
+                className="hidden md:table-cell pl-4 w-[20%] text-[#1f1e1e] font-medium text-sm capitalize">
                 ${item.price_usd}
               </td>
-              <td className=" hidden md:table-cell pl-4 w-[30%]  text-[#1f1e1e] font-medium text-sm capitalize">
+              <td
+                data-testid="desktop-view"
+                className=" hidden md:table-cell pl-4 w-[30%]  text-[#1f1e1e] font-medium text-sm capitalize">
                 {item.tsupply} {item.symbol}
-              </td> */}
+              </td>
             </tr>
           ))
         ) : (
